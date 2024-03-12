@@ -1,5 +1,5 @@
-resource "aws_iam_role" "example_role" {
-  name = "example-role"
+resource "aws_iam_role" "role" {
+  name = "role"
   assume_role_policy = jsonencode({
     Version = "2012-10-17",
     Statement = [{
@@ -12,8 +12,8 @@ resource "aws_iam_role" "example_role" {
   })
 }
 
-resource "aws_iam_policy_attachment" "example_attachment" {
-  name       = "example-attachment"
-  roles      = [aws_iam_role.example_role.name]
-  policy_arn = aws_iam_policy.example_policy.arn
+resource "aws_iam_policy_attachment" "attachment" {
+  name       = "attachment"
+  roles      = [aws_iam_role.role.name]
+  policy_arn = aws_iam_policy.policy.arn
 }

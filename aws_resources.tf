@@ -7,12 +7,12 @@ resource "aws_instance" "lab6" {
     Environment = "Production"
     Owner       = "Divya Alex"
   }
-  iam_instance_profile = aws_iam_instance_profile.example_profile.name
+  iam_instance_profile = aws_iam_instance_profile.profile.name
 }
 
-resource "aws_iam_instance_profile" "example_profile" {
-  name = "example_profile"
-  role = aws_iam_role.example_role.name
+resource "aws_iam_instance_profile" "profile" {
+  name = "profile"
+  role = aws_iam_role.role.name
 }
 
 
